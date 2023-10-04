@@ -39,7 +39,6 @@
  * @returns {string} - the character at the index
  */
 function findTheCharacterAtIndex(str, indx) {
-  // write your code here & return value
 }
 
 /**
