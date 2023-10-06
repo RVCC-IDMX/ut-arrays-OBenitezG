@@ -90,10 +90,7 @@ function makeAllLowerCase(str) {
  * ? ex: 'HELLO' => 'Hello'
  */
 function makeWordTitleCase(word) {
-  const firstLetter = word.charAt(0);
-  const capitalTitle = word.charAt(0).toUpperCase();
-
-  return word.replace(firstLetter, capitalTitle);
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 }
 
 /**
@@ -117,16 +114,13 @@ function replaceTheString(str, oldStr, newStr) {
  * ? hint: use split() and makeWordTitleCase()
  */
 function makeSentenceTitleCase(sentence) {
-  let newSentance = '';
-
   const words = sentence.split(' ');
 
-  for (let word = 0; word < words.length; word += 1) {
-    const newPart = makeWordTitleCase(word);
-    newSentance += newPart;
+  for (let i = 0; i < words.length; i += 1) {
+    words[i] = makeWordTitleCase(words[i]);
   }
 
-  return newSentance;
+  return words.join(' ');
 }
 
 module.exports = {
